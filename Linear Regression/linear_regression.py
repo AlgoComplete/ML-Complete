@@ -93,7 +93,7 @@ if __name__ == "__main__":
     )
 
     # Train the model
-    model = LinearRegression(0.01, 100)
+    model = LinearRegression(0.05, 1000)
     model.fit(X_train, y_train)
 
     # Predict the values
@@ -103,15 +103,20 @@ if __name__ == "__main__":
     r2_score = model.r2_score(X_test, y_test)
     print("R2 score: ", r2_score)
 
+    # Plot the graph for data with 1 feature
     if (X.shape[1] == 1):
         # Plot the data
         cmap = plt.get_cmap("viridis")
         fig = plt.figure(figsize=(8, 6))
-        plt.scatter(X_train, y_train, color=cmap(0.9), s=10)
-        plt.scatter(X_test, y_test, color=cmap(0.5), s=10)
-        plt.plot(X_test, y_pred, color="red", label="Prediction")
+        plt.scatter(
+            X_train, y_train, color=cmap(0.9), s=10, label="Training Data")
+        plt.scatter(
+            X_test, y_test, color=cmap(0.5), s=10, label="Testing Data")
+        plt.plot(
+            X_test, y_pred, color="red", label="Prediction")
         plt.xlabel("X - Features", fontsize=18)
         plt.ylabel("y - Outcome", fontsize=18)
+        plt.legend()
         plt.show()
     else:
         print("Plotting the data is not possible for more than 1 feature in a 2-D plot")
