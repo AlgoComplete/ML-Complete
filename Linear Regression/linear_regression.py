@@ -27,7 +27,6 @@ class LinearRegression:
         self.iterations = iterations
         self.weights = None
         self.bias = None
-        self.costs = None
 
     def fit(self, X, y):
         """
@@ -47,7 +46,7 @@ class LinearRegression:
         n_samples, n_features = X.shape
 
         # init parameters
-        self.weights, self.bias, self.costs = np.zeros(n_features), 0, []
+        self.weights, self.bias = np.zeros(n_features), 0
 
         # Gradient Descent
         for i in range(self.iterations):
@@ -63,9 +62,35 @@ class LinearRegression:
             self.bias -= self.learning_rate * grad_bias
 
     def predict(self, X):
+        """ Predict the new data from the previous trained model
+
+        Parameters
+        ----------
+            X : array-like, shape = [n_samples, n_features]
+                Testing vectors, where n_samples is the number of samples and n_features is the number of features.
+
+        Returns
+        -------
+            y_pred : array-like, shape = [n_samples, n_target_values]
+                Predicted values using the trained linear model.
+        """
         return np.dot(X, self.weights) + self.bias
 
     def r2_score(self, X, y):
+        """ Compute the R2 score of the model
+
+        Parameters
+        ----------
+            X : array-like, shape = [n_samples, n_features]
+                Training/Testing vectors, where n_samples is the number of samples and n_features is the number of features.
+            y : array-like, shape = [n_samples, n_target_values]
+                Training/Testing target values, where n_samples is the number of samples and n_target_values is the number of target values.
+
+        Returns
+        -------
+            r2_score : float
+                R2 score of the trained model on the provided data.
+        """
         y_pred = self.predict(X)
         corr_matrix = np.corrcoef(y, y_pred)
         corr = corr_matrix[0, 1]
