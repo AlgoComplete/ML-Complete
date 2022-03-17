@@ -6,6 +6,7 @@ import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from sklearn import linear_model
+from sklearn.metrics import accuracy_score
 
 
 # Constructing the Logistic regression model
@@ -89,10 +90,15 @@ if __name__ == "__main__":
     n_sample = int(input("Enter the number of samples: "))
     n_features = int(input("Enter the number of features: "))
 
+    n_redundant = 0
+    if n_features > 1:
+        n_redundant = 1
+
     # Prepare the data
-    X, y = datasets.make_regression(
-        n_samples=n_sample, n_features=n_features, noise=10, random_state=4
+    X, y = datasets.make_classification(
+        n_samples=n_sample, n_features=n_features, n_classes=2, n_informative=1, n_redundant=n_redundant, n_repeated=0, n_clusters_per_class=1, random_state=4
     )
+
     print(X.shape, y.shape)
 
     # Split the data into training and testing
@@ -108,8 +114,20 @@ if __name__ == "__main__":
     y_pred = model.predict(X_test)
 
     # Compute the R2 score
-    r2_score = model.r2_score(X_test, y_test)
-    print("R2 score: ", r2_score)
+    accuracy_score = model.accuracy_score(X_test, y_test)
+    print("Accuracy score: ", accuracy_score)
+
+    def plot_data(x, y):
+        plt.xlabel('score of test-1')
+        plt.ylabel('score of test-1')
+        for i in range(x.shape[0]):
+            if y[i] == 1:
+                plt.plot(x[i, 0], x[i, 1], 'gX')
+            else:
+                plt.plot(x[i, 0], x[i, 1], 'mD')
+        plt.show()
+
+    plot_data(X_test, y_test)
 
     # Plot the graph for data with 1 feature
     if (X.shape[1] == 1):
