@@ -7,14 +7,15 @@ jobs:
     runs-on: ubuntu-latest
     name: Lint
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
+      - name: Check out source repository
+        uses: actions/checkout@v2
+      - name: Set up Python environment
+        uses: actions/setup-python@v2
         with:
           python-version: "3.9"
       - name: flake8 Lint
         uses: py-actions/flake8@v2
         with:
-          update-pip: "true"
           ignore: "F401"
           max-line-length: "100"
           path: "ml_complete"
