@@ -2,7 +2,6 @@
 
 # importing required libraries
 import numpy as np
-import matplotlib.pyplot as plt
 
 
 # Constructing the linear regression model
@@ -97,53 +96,3 @@ class LinearRegression:
         corr_matridata = np.corrcoef(label, label_pred)
         corr = corr_matridata[0, 1]
         return corr**2
-
-
-# Testing
-if __name__ == "__main__":
-    # Imports
-    from sklearn.model_selection import train_test_split
-    from sklearn import datasets
-
-    n_sample = int(input("Enter the number of samples: "))
-    n_features = int(input("Enter the number of features: "))
-
-    # Prepare the data
-    data, label = datasets.make_regression(
-        n_samples=n_sample, n_features=n_features, noise=10, random_state=4
-    )
-    print(data.shape, label.shape)
-
-    # Split the data into training and testing
-    data_train, data_test, label_train, label_test = train_test_split(
-        data, label, test_size=0.2, random_state=0
-    )
-
-    # Train the model
-    model = LinearRegression(0.05, 1000)
-    model.fit(data_train, label_train)
-
-    # Predict the values
-    label_pred = model.predict(data_test)
-
-    # Compute the R2 score
-    r2_score = model.r2_score(data_test, label_test)
-    print("R2 score: ", r2_score)
-
-    # Plot the graph for data with 1 feature
-    if data.shape[1] == 1:
-        # Plot the data
-        cmap = plt.get_cmap("viridis")
-        fig = plt.figure(figsize=(8, 6))
-        plt.scatter(
-            data_train, label_train, color=cmap(0.9), s=10, label="Train Data")
-        plt.scatter(
-            data_test, label_test, color=cmap(0.5), s=10, label="Test Data")
-        plt.plot(
-            data_test, label_pred, color="red", label="Prediction")
-        plt.datalabel("data - Features", fontsize=18)
-        plt.ylabel("label - Outcome", fontsize=18)
-        plt.legend()
-        plt.show()
-    else:
-        print("Plotting not possible for more than 1 feature in a 2-D plot")
