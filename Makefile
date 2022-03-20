@@ -21,6 +21,5 @@ conda-pip:
 
 # Linting python code with flake8
 flake8-badge:
-	$(CONDA_ACTIVATE) MLBasic
 	flake8 ./ml_complete --exit-zero --format=html --htmldir ./reports/flake8 --statistics --tee --output-file ./reports/flake8/flake8stats.txt
 	genbadge flake8 -o ./reports/flake8/flake8-badge.svg
