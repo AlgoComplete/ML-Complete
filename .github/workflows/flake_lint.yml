@@ -16,6 +16,7 @@ jobs:
       - name: flake8 Lint
         uses: py-actions/flake8@v2
         with:
+          update-pip: "true"
           ignore: "F401"
           max-line-length: "100"
           path: "ml_complete"
