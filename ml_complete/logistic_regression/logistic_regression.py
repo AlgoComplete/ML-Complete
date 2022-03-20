@@ -8,7 +8,7 @@ import numpy as np
 
 class LogisticRegression:
     """Logistic Regression Class"""
-    
+
     def __init__(self, learning_rate=0.05, iterations=1000):
         """
         Logistic Regression
@@ -83,12 +83,12 @@ class LogisticRegression:
 
     def sigmoid(self, z):
         """ Compute the sigmoid function of the input z
-        
+
         Parameters
         ----------
             z : array-like, shape = [n_samples, n_features]
                 Input values.
-        
+
         Returns
         -------
             sigmoid : array-like, shape = [n_samples, n_features]
