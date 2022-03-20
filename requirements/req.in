@@ -4,4 +4,4 @@ pandas
 sklearn
 ipykernel
 matplotlib
-pylint
+flake8
