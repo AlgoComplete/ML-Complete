@@ -5,3 +5,5 @@ sklearn
 ipykernel
 matplotlib
 flake8
+black
+genbadge[all]

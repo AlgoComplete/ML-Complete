@@ -8,26 +8,50 @@ asttokens==2.0.5
     # via stack-data
 backcall==0.2.0
     # via ipython
+black==22.1.0
+    # via -r requirements/req.in
+certifi==2021.10.8
+    # via requests
+charset-normalizer==2.0.12
+    # via requests
+click==8.0.4
+    # via
+    #   black
+    #   genbadge
 cycler==0.11.0
     # via matplotlib
 debugpy==1.5.1
     # via ipykernel
 decorator==5.1.1
     # via ipython
+defusedxml==0.7.1
+    # via genbadge
 entrypoints==0.4
     # via jupyter-client
 executing==0.8.3
     # via stack-data
 flake8==4.0.1
-    # via -r requirements/req.in
+    # via
+    #   -r requirements/req.in
+    #   flake8-html
+flake8-html==0.4.1
+    # via genbadge
 fonttools==4.31.1
     # via matplotlib
+genbadge[all]==1.0.6
+    # via -r requirements/req.in
+idna==3.3
+    # via requests
+importlib-metadata==4.11.3
+    # via flake8-html
 ipykernel==6.9.2
     # via -r requirements/req.in
 ipython==8.1.1
     # via ipykernel
 jedi==0.18.1
     # via ipython
+jinja2==3.0.3
+    # via flake8-html
 joblib==1.1.0
     # via scikit-learn
 jupyter-client==7.1.2
@@ -36,6 +60,8 @@ jupyter-core==4.9.2
     # via jupyter-client
 kiwisolver==1.4.0
     # via matplotlib
+markupsafe==2.1.1
+    # via jinja2
 matplotlib==3.5.1
     # via -r requirements/req.in
 matplotlib-inline==0.1.3
@@ -44,6 +70,8 @@ matplotlib-inline==0.1.3
     #   ipython
 mccabe==0.6.1
     # via flake8
+mypy-extensions==0.4.3
+    # via black
 nest-asyncio==1.5.4
     # via
     #   ipykernel
@@ -61,12 +89,18 @@ pandas==1.4.1
     # via -r requirements/req.in
 parso==0.8.3
     # via jedi
+pathspec==0.9.0
+    # via black
 pexpect==4.8.0
     # via ipython
 pickleshare==0.7.5
     # via ipython
 pillow==9.0.1
-    # via matplotlib
+    # via
+    #   genbadge
+    #   matplotlib
+platformdirs==2.5.1
+    # via black
 prompt-toolkit==3.0.28
     # via ipython
 psutil==5.9.0
@@ -80,7 +114,9 @@ pycodestyle==2.8.0
 pyflakes==2.4.0
     # via flake8
 pygments==2.11.2
-    # via ipython
+    # via
+    #   flake8-html
+    #   ipython
 pyparsing==3.0.7
     # via
     #   matplotlib
@@ -94,6 +130,8 @@ pytz==2022.1
     # via pandas
 pyzmq==22.3.0
     # via jupyter-client
+requests==2.27.1
+    # via genbadge
 scikit-learn==1.0.2
     # via sklearn
 scipy==1.8.0
@@ -106,6 +144,8 @@ stack-data==0.2.0
     # via ipython
 threadpoolctl==3.1.0
     # via scikit-learn
+tomli==2.0.1
+    # via black
 tornado==6.1
     # via
     #   ipykernel
@@ -117,10 +157,16 @@ traitlets==5.1.1
     #   jupyter-client
     #   jupyter-core
     #   matplotlib-inline
+typing-extensions==4.1.1
+    # via black
+urllib3==1.26.9
+    # via requests
 wcwidth==0.2.5
     # via prompt-toolkit
 wincertstore==0.2
     # via -r requirements/req.in
+zipp==3.7.0
+    # via importlib-metadata
 
 # The following packages are considered to be unsafe in a requirements file:
 # setuptools
