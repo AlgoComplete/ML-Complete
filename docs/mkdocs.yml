@@ -1,0 +1,97 @@
+site_name: ML-Complete
+site_description: >-
+  Machine Learning Complete, theoretical conecpts along with easy-to-understand code implementation and examples.
+# site-url: https://ml-complete.readthedocs.io/en/latest/
+site_author: Indrashis Paul
+theme:
+  name: material
+  palette:
+    - scheme: default
+      primary: cyan
+      accent: orange
+      toggle:
+        icon: material/brightness-7
+        name: Switch to Light Mode
+    - scheme: slate
+      primary: cyan
+      accent: orange
+      toggle:
+        icon: material/brightness-4
+        name: Switch to Dark Mode
+  features:
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - content.code.annotate
+    - toc.follow
+  icon:
+    repo: fontawesome/brands/github-alt
+  logo:
+
+repo_name: AlgoComplete/ML-Complete
+repo_url: https://github.com/AlgoComplete/ML-Complete
+edit_uri: ""
+plugins:
+  - search
+
+# Extensions
+markdown_extensions:
+  - abbr
+  - admonition
+  - attr_list
+  - def_list
+  - footnotes
+  - meta
+  - md_in_html
+  - toc:
+      permalink: true
+  - pymdownx.arithmatex:
+      generic: true
+  - pymdownx.betterem:
+      smart_enable: all
+  - pymdownx.caret
+  - pymdownx.details
+  - pymdownx.emoji:
+      emoji_generator: !!python/name:materialx.emoji.to_svg
+      emoji_index: !!python/name:materialx.emoji.twemoji
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.keys
+  - pymdownx.magiclink:
+      repo_url_shorthand: true
+      user: squidfunk
+      repo: mkdocs-material
+  - pymdownx.mark
+  - pymdownx.smartsymbols
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+  - pymdownx.tabbed:
+      alternate_style: true
+  - pymdownx.tasklist:
+      custom_checkbox: true
+  - pymdownx.tilde
+  - pymdownx.tabbed:
+      alternate_style: true
+extra_javascript:
+  - javascripts/mathjax.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+extra:
+  analytics:
+    provider: google
+    property: UA-133183413-1
+  social:
+    - icon: fontawesome/brands/github-alt
+      link: https://github.com/AlgoComplete/ML-Complete
+
+# Page Tree
+
+nav:
+  - Home: index.md
+  - Linear Models:
+      - Linear/linear.md
+      - Linear/logistic.md

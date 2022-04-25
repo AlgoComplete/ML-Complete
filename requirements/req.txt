@@ -18,8 +18,11 @@ click==8.0.4
     # via
     #   black
     #   genbadge
+    #   mkdocs
 cycler==0.11.0
     # via matplotlib
+cyclic==1.0.0
+    # via mdx-include
 debugpy==1.5.1
     # via ipykernel
 decorator==5.1.1
@@ -40,10 +43,15 @@ fonttools==4.31.1
     # via matplotlib
 genbadge[all]==1.0.6
     # via -r requirements/req.in
+ghp-import==2.0.2
+    # via mkdocs
 idna==3.3
     # via requests
 importlib-metadata==4.11.3
-    # via flake8-html
+    # via
+    #   flake8-html
+    #   markdown
+    #   mkdocs
 ipykernel==6.9.2
     # via -r requirements/req.in
 ipython==8.1.1
@@ -51,7 +59,10 @@ ipython==8.1.1
 jedi==0.18.1
     # via ipython
 jinja2==3.0.3
-    # via flake8-html
+    # via
+    #   flake8-html
+    #   mkdocs
+    #   mkdocs-material
 joblib==1.1.0
     # via scikit-learn
 jupyter-client==7.1.2
@@ -60,6 +71,12 @@ jupyter-core==4.9.2
     # via jupyter-client
 kiwisolver==1.4.0
     # via matplotlib
+markdown==3.3.6
+    # via
+    #   mdx-include
+    #   mkdocs
+    #   mkdocs-material
+    #   pymdown-extensions
 markupsafe==2.1.1
     # via jinja2
 matplotlib==3.5.1
@@ -70,6 +87,18 @@ matplotlib-inline==0.1.3
     #   ipython
 mccabe==0.6.1
     # via flake8
+mdx-include==1.4.1
+    # via -r requirements/req.in
+mergedeep==1.3.4
+    # via mkdocs
+mkdocs==1.3.0
+    # via
+    #   -r requirements/req.in
+    #   mkdocs-material
+mkdocs-material==8.2.9
+    # via -r requirements/req.in
+mkdocs-material-extensions==1.0.3
+    # via mkdocs-material
 mypy-extensions==0.4.3
     # via black
 nest-asyncio==1.5.4
@@ -84,7 +113,9 @@ numpy==1.22.3
     #   scikit-learn
     #   scipy
 packaging==21.3
-    # via matplotlib
+    # via
+    #   matplotlib
+    #   mkdocs
 pandas==1.4.1
     # via -r requirements/req.in
 parso==0.8.3
@@ -117,19 +148,31 @@ pygments==2.11.2
     # via
     #   flake8-html
     #   ipython
+    #   mkdocs-material
+pymdown-extensions==9.3
+    # via mkdocs-material
 pyparsing==3.0.7
     # via
     #   matplotlib
     #   packaging
 python-dateutil==2.8.2
     # via
+    #   ghp-import
     #   jupyter-client
     #   matplotlib
     #   pandas
 pytz==2022.1
     # via pandas
+pyyaml==6.0
+    # via
+    #   mkdocs
+    #   pyyaml-env-tag
+pyyaml-env-tag==0.1
+    # via mkdocs
 pyzmq==22.3.0
     # via jupyter-client
+rcslice==1.1.0
+    # via mdx-include
 requests==2.27.1
     # via genbadge
 scikit-learn==1.0.2
@@ -161,6 +204,8 @@ typing-extensions==4.1.1
     # via black
 urllib3==1.26.9
     # via requests
+watchdog==2.1.7
+    # via mkdocs
 wcwidth==0.2.5
     # via prompt-toolkit
 wincertstore==0.2

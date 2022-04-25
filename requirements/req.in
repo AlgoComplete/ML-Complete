@@ -7,3 +7,6 @@ matplotlib
 flake8
 black
 genbadge[all]
+mkdocs
+mkdocs-material
+mdx-include
